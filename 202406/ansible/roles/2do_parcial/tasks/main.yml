@@ -1,0 +1,21 @@
+# Creo el archivo datos_alumno.txt usando la plantilla
+- name: Crear archivo datos_alumno.txt
+  ansible.builtin.template:
+    src: templates/datos_alumno.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+    mode: '0644'
+
+# Creo el archivo datos_equipo.txt usando la plantilla
+- name: Crear archivo datos_equipo.txt
+  ansible.builtin.template:
+    src: templates/datos_equipo.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+    mode: '0644'
+
+# Configurar sudoers para el grupo 2PSupervisores
+- name: Configurar sudoers para 2PSupervisores
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    state: present
+    line: "%2PSupervisores ALL=(ALL) NOPASSWD:ALL"
+    validate: 'visudo -cf %s'

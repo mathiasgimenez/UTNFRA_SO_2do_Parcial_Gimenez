@@ -1,0 +1,6 @@
+---
+- name: Configurar entorno del 2do parcial
+  hosts: all
+  become: true
+  roles:
+    - 2do_parcial

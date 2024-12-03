@@ -1,0 +1,7 @@
+alumno_nombre: Mathias
+alumno_apellido: Gimenez
+alumno_division: 311
+
+equipo_ip: 192.168.56.3
+equipo_distro: Vagrant
+equipo_cores: 4
